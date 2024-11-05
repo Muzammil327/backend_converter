@@ -3,7 +3,7 @@ const ffmpeg = require('fluent-ffmpeg');
 const cloudinary = require('../lib/cloudinaryConfig');
 const ffmpegPath = require('ffmpeg-static');
 const ffprobePath = require('ffprobe-static').path;
-
+const fs = require('fs')
 ffmpeg.setFfmpegPath(ffmpegPath);
 ffmpeg.setFfprobePath(ffprobePath);
 
