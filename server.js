@@ -108,9 +108,9 @@ app.use(
 );
 app.use("/merged", express.static(path.join(__dirname, "merged")));
 
-app.get("/", (res, req) => {
-  res.send("Hello World")
-})
+// app.get("/", (res, req) => {
+//   res.send("Hello World")
+// })
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
