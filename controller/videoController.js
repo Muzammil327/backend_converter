@@ -3,7 +3,13 @@ const ffmpeg = require('fluent-ffmpeg');
 const cloudinary = require('../lib/cloudinaryConfig');
 const ffmpegPath = require('ffmpeg-static');
 const ffprobePath = require('ffprobe-static').path;
-const fs = require('fs')
+
+// Check if the path exists and fallback if necessary
+if (!ffmpegPath) {
+    console.error('FFmpeg binary not found');
+    process.exit(1);
+}
+
 ffmpeg.setFfmpegPath(ffmpegPath);
 ffmpeg.setFfprobePath(ffprobePath);
 
