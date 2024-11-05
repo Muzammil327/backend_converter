@@ -108,9 +108,11 @@ app.use(
 );
 app.use("/merged", express.static(path.join(__dirname, "merged")));
 
-// app.get("/", (res, req) => {
-//   res.send("Hello World")
-// })
+
+// Add this route to display some text on the home page
+app.get("/", (req, res) => {
+  res.send("Welcome to the Video Processing Server!");
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
