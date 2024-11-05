@@ -31,7 +31,7 @@ const mergeVideos = (req, res) => {
             for (const file of videoFiles) {
                 const result = await cloudinary.uploader.upload(file, { resource_type: 'video' });
                 uploadedVideoURLs.push(result.secure_url);
-                await fs.remove(file); // Optionally, delete the local file after upload
+                // await fs.remove(file); // Optionally, delete the local file after upload
             }
         } catch (error) {
             console.error('Error uploading to Cloudinary:', error.message);
